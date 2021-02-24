@@ -48,8 +48,13 @@ const Layout = ({ children, history }) => {
 						</span>
 					</li>
 					<li className="nav-item">
-						<Link className="nav-link" to="vigils" style={isActive('/vigils')}>
+						<Link className="nav-link" to="vigil-list" style={isActive('/vigil-list')}>
 							Vigil
+						</Link>
+					</li>
+					<li className="nav-item">
+						<Link className="nav-link" to="create-vigil" style={isActive('/create-vigil')}>
+							Start New Vigil
 						</Link>
 					</li>
 					

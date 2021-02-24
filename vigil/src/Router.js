@@ -9,7 +9,8 @@ import Signup from './auth/Signup';
 import Admin from "./core/Admin";
 import Private from "./core/Private";
 import PageNotFound from './core/PageNotFound';
-import Vigils from './components/vigils';
+import VigilList from './components/vigil-list';
+import CreateVigil from './components/create-vigil';
 
 
 
@@ -27,7 +28,8 @@ const Router = () => {
 					<Route path="/signin" exact component={Signin} />
 					<AdminRoute path="/admin" exact component={Admin} />
 					<PrivateRoute path="/private" exact component={Private} />
-					<PrivateRoute path="/vigils" exact component={Vigils} />
+					<PrivateRoute path="/vigil-list" exact component={VigilList} />
+					<PrivateRoute path="/create-vigil" exact component={CreateVigil} />
 					<Route path="*" exact component={PageNotFound} />
 				</Switch>
 			</Layout>

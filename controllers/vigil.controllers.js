@@ -17,7 +17,7 @@ const viewVigils = (req, res) => {
     User.findById(loggedInUser).exec((err, user) => {
         if (err) {
             return res.status(400).json({
-                error: 'Failed to fetch todos'
+                error: 'Failed to fetch vigils'
             })
         }
 
@@ -37,7 +37,8 @@ const viewVigils = (req, res) => {
  */
 const createVigil = (req, res) => {
     const user = req.user._id;
-    const vigil = new Vigil({ user, vigil: req.body.vigil });
+    let vigil = new Vigil({ 
+        user, vigil: req.body.vigil });
 
     // Save new todo
     vigil.save();
@@ -49,7 +50,7 @@ const createVigil = (req, res) => {
     User.findById(user).exec((err, data) => {
         if (err) {
             return res.status(400).json({
-                error: 'Failed to add todo'
+                error: 'Failed to add vigil'
             })
         }
 

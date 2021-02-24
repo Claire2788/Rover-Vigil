@@ -7,23 +7,27 @@ const vigilSchema = new Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     },
-    s1q1: {
+    question1: {
         type: String,
         required: true,
     },
-    s1q2: {
+    question2: {
         type: String,
         required: true,
     },
-    s1q3: {
+    question3: {
         type: String,
         required: true,
     },
-    s2q1: {
+    question4: {
         type: String,
         required: true,
     },
-    s2q2: {
+    question5: {
+        type: String,
+        required: true,
+    },
+    question6: {
         type: String,
         required: true,
     }
