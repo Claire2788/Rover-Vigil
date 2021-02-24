@@ -34,8 +34,10 @@ mongoose.connect(
 const authRoutes = require('./routes/auths');
 const userRoutes = require('./routes/users');
 const todoRoutes = require('./routes/todo');
+const vigilRoutes = require('./routes/vigil');
 
 // Use Routes middlewear
 app.use('/api', authRoutes);
 app.use('/api', userRoutes);
 app.use('/api', todoRoutes);
+app.use('/api', vigilRoutes);

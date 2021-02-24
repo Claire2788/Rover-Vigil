@@ -48,7 +48,7 @@ const Layout = ({ children, history }) => {
 						</span>
 					</li>
 					<li className="nav-item">
-						<Link className="nav-link" to="vigil/multistepform" style={isActive('/vigil/multistepform')}>
+						<Link className="nav-link" to="vigils" style={isActive('/vigils')}>
 							Vigil
 						</Link>
 					</li>

@@ -9,8 +9,8 @@ import Signup from './auth/Signup';
 import Admin from "./core/Admin";
 import Private from "./core/Private";
 import PageNotFound from './core/PageNotFound';
-import Todos from './components/todos';
-import MultiStepForm from './components/vigil/multistepform';
+import Vigils from './components/vigils';
+
 
 
 // Import Protected Routes
@@ -27,7 +27,7 @@ const Router = () => {
 					<Route path="/signin" exact component={Signin} />
 					<AdminRoute path="/admin" exact component={Admin} />
 					<PrivateRoute path="/private" exact component={Private} />
-					<PrivateRoute path="/vigil/multistepform" exact component={MultiStepForm} />
+					<PrivateRoute path="/vigils" exact component={Vigils} />
 					<Route path="*" exact component={PageNotFound} />
 				</Switch>
 			</Layout>
