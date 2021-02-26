@@ -3,8 +3,8 @@ import axios from 'axios';
 import Table from 'react-bootstrap/Table';
 import VigilTableRow from './vigilTableRow';
 
-//This component lists all the documents in the Car collection. 
-
+//The below is to display all the entries in the Database. 
+//I think the vigils: [] object is giving the issue and I am not sure how to get the correct data to show
 export default class VigilList extends Component {
 
   constructor(props) {

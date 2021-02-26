@@ -44,6 +44,7 @@ const Admin = ({ history }) => {
 					signout(() => history.push('/'));
 				}
 			});
+			return name; 
 	};
 
 	const { role, name, email, password, buttonText } = values;

@@ -1,8 +1,12 @@
 import React from "react";
 import Form from 'react-bootstrap/Form'
 import axios from 'axios';
+import { loadUser } from '../core/Admin'
+
 
 //New Survey form
+//TO NOTE: on the todos page the user gets assocaited, but I have not worked out how it actually works. 
+//What I understand is that the auth/Helpers file associates the user on the todo.js page
 
 export default class CreateVigil extends React.Component {
   constructor(props) {
@@ -23,6 +27,7 @@ export default class CreateVigil extends React.Component {
       section3q4: ''
     }
 
+
     
 
      // Setting up functions
@@ -31,6 +36,11 @@ export default class CreateVigil extends React.Component {
      //this.onChangeQuestion3 = this.onChangeQuestion3.bind(this);
      //this.onSubmit = this.onSubmit.bind(this);
 
+  }
+
+  componentDidMount() {
+    const username = loadUser();
+    this.setState({currentUser: username })
   }
 
   //These below handle changes are used for each field in the survey
@@ -99,12 +109,14 @@ export default class CreateVigil extends React.Component {
     event.preventDefault()
 
     console.log(`Survey`);
+    console.log(`Username: ${this.state.currentUser}`);
     console.log(`Question 1: ${this.state.section1q1}`);
     console.log(`Question 2: ${this.state.section1q2}`);
     console.log(`Question 3: ${this.state.section1q3}`);
 
     //Object which gets posted to the database
     const vigilObject = {
+      username: this.state.currentUser,
       section1q1: this.state.section1q1,
       section1q2: this.state.section1q2,
       section1q3: this.state.section1q3,
@@ -125,7 +137,7 @@ export default class CreateVigil extends React.Component {
   axios.post('/api/vigils/create-vigil', vigilObject)
       .then(res => console.log(res.data));
 
-  this.setState({section1q1: '', section1q2: '', section1q3: '', section1q4: '', section2q1: '', section2q2: '' , section2q3: '', section2q4: '', section3q1: '', section3q2: '', section3q3: '', section3q4: '' })
+  this.setState({username: '', section1q1: '', section1q2: '', section1q3: '', section1q4: '', section2q1: '', section2q2: '' , section2q3: '', section2q4: '', section3q1: '', section3q2: '', section3q3: '', section3q4: '' })
 
 
   this.props.history.push('/')

@@ -23,9 +23,9 @@ const userSchema = new Schema({
         type: String,
         default: 'user'
     },
-    todos: [{
+    vigils: [{
         type: Schema.Types.ObjectId,
-        ref: 'Todo'
+        ref: 'Vigil'
     }]
 }, { timestamps: true });
 
