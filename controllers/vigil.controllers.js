@@ -35,10 +35,11 @@ const viewVigils = (req, res) => {
  * @param {*} req user information from body
  * @param {*} res with user information to client
  */
+
 const createVigil = (req, res) => {
     const user = req.user._id;
-    let vigil = new Vigil({ 
-        user, vigil: req.body.vigil });
+    const vigil = new Vigil({ user, vigil: req.body.vigil });
+        console.log(req.body.vigil)
 
     // Save new todo
     vigil.save();

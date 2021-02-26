@@ -12,10 +12,10 @@ export default class VigilTableRow extends Component {
         this.deleteVigil = this.deleteVigil.bind(this);
     }
 
-    /*deleteVigil(e) {
+    deleteVigil(e) {
         e.preventDefault()
 
-        axios.delete('vigil/delete-car/' + this.props.obj._id)
+        axios.delete('vigil/delete-vigil/' + this.props.obj._id)
             .then((res) => {
                 console.log('Car successfully deleted!')
             }).catch((error) => {
@@ -25,13 +25,13 @@ export default class VigilTableRow extends Component {
             // Redirect to Car List 
             window.location.reload(true);
             
-    }*/
+    }
 
 
     render() {
         return (
             <tr>
-                <td>{this.props.obj.vigil}</td>
+                <td>{this.props.obj.section1q1}</td>
                 <td>
                 </td>
             </tr>

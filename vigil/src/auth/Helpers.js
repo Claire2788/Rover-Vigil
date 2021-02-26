@@ -55,7 +55,7 @@ const isAuth = () => {
 
         if (cookieChecked) {
             if(localStorage.getItem('user')) {
-                return JSON.parse(localStorage.getItem('user'))
+                return JSON.stringify(localStorage.getItem('user'))
             } else {
                 return false
             }

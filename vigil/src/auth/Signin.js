@@ -42,7 +42,7 @@ const Signin = ({ history }) => {
 				// save the response (user, token) => localStorage/cookie
 				authenticate(response, () => {
 					setValues({ ...values, email: '', password: '', buttonText: 'Submitted' });
-					isAuth() && isAuth().role === 'admin' ? history.push('/admin') : history.push('/todos');
+					isAuth() && isAuth().role === 'admin' ? history.push('/admin') : history.push('/');
 				});
 			})
 			.catch((error) => {
